@@ -17,6 +17,7 @@ steps:
 
 - script: |
     npm install
-    npm build
+    npm build        
+     npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
     ./node_modules/.bin/wdio wdio.conf.js
   displayName: 'npm install and build'
