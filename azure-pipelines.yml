@@ -12,12 +12,10 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '18.x'
+    versionSpec: '18.4.0'
   displayName: 'Install Node.js'
 
 - script: |
     npm install
-    npm build        
-     npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
-    ./node_modules/.bin/wdio wdio.conf.js
+    npx wdio wdio.conf.js
   displayName: 'npm install and build'
