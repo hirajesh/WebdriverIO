@@ -17,5 +17,6 @@ steps:
 
 - script: |
     npm install
+    npm build
     ./node_modules/.bin/wdio wdio.conf.js
   displayName: 'npm install and build'
