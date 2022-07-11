@@ -1,9 +1,15 @@
-Feature: Open and sign in a gmail account
+Feature: Open and sign in a reg user account
 
 
-    Scenario: Login  gmail account
-        Given Open gmail url
-        Then Enter valid credentials
-        When Sign in to account
+    Scenario: Login  reg user account
+        Given Open  url
+        When Click sigIn link
+        Then Enter valid Username
+        And Enter valid Password
+        Then Sign in to account
+        When Verify pop up is appear
+        Then Close the verify pop up
+        And Verify the Basket
+
 
 

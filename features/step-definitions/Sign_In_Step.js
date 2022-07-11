@@ -1,21 +1,37 @@
 import { Given, When, Then } from "@cucumber/cucumber";
-import GmailSignIn from "../pageobjects/GmailSignIn.Page";
+const webdriverio = require("webdriverio");
+import SignIn from "../pageobjects/SignIn.Page";
 
-Given(/^Open gmail url$/, async () => {
-  await GmailSignIn.openherokuurl();
-  await GmailSignIn.herokuloginpagemessage();
+Given(/^Open  url$/, async () => {
+  await SignIn.landopenurl();
 });
 
-Then(/^Enter valid credentials$/, async () => {
-  await GmailSignIn.enterherokuusername();
+Then(/^Click sigIn link$/, async () => {
+  await SignIn.land_signIN();
 });
 
-When(/^Sign in to account$/, async () => {
-    browser.pause(5000);
+Then(/^Enter valid Username$/, async () => {
+  await SignIn.land_Username();
+});
 
-  await GmailSignIn.enterherokupassword();
-  await GmailSignIn.clickherokulogin();
-  browser.pause(5000);
-  await GmailSignIn.herokudashboardmessage();
-  await GmailSignIn.clickherokulogout();
+Then(/^Enter valid Password$/, async () => {
+  await SignIn.land_Passsword();
+});
+
+Then(/^Sign in to account$/, async () => {
+  await SignIn.land_login();
+});
+
+Then(/^Verify pop up is appear$/, async () => {
+  await SignIn.verify_land_mobile_verification();
+});
+
+Then(/^Close the verify pop up$/, async () => {
+  await SignIn.land_close_mobileverification();
+});
+
+When(/^Verify the Basket$/, async () => {
+  await SignIn.land_basket();
+
+  console.log("##################TEST ENDED#####################");
 });
