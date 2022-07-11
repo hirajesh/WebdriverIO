@@ -3,6 +3,7 @@ const webdriverio = require("webdriverio");
 import SignIn from "../pageobjects/SignIn.Page";
 
 Given(/^Open  url$/, async () => {
+  browser.capabilities = {"goog:chromeOptions": {"args": ["--headless", "--no-sandbox", "--disable-dev-shm-usage"]}},
   await SignIn.landopenurl();
 });
 
