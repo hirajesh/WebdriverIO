@@ -19,9 +19,8 @@ steps:
     npm install
     npm install wdio-chromedriver-service --save-dev
     npx wdio wdio.conf.js
-    cat report.xml
   displayName: 'npm install and build'
 
--   task: PublishTestResults@2
-    inputs :
-       testResultsFiles: '*.xml'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
