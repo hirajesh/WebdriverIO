@@ -1,6 +1,5 @@
-import assert from "assert";
-import { expect } from "chai";
-const webdriverio = require("webdriverio");
+
+
 
 class SignIn {
   //ELEMENTS
@@ -86,6 +85,8 @@ class SignIn {
   async landopenurl() {
     await browser.maximizeWindow();
     await browser.url("https://lms.com:L@digital@uat1.homecentre.com/ae/en/");
+//await browser.url("https://www.homecentre.com/ae/en/");
+
     await browser.setTimeout({ pageLoad: 50000 });
     browser.saveScreenshot("./Screenshots/homepage.png");
   }
@@ -112,7 +113,7 @@ class SignIn {
   async verify_land_mobile_verification() {
     const closeverify = await this.lancloseverify;
     await closeverify.waitForDisplayed();
-    assert.equal(await closeverify.isDisplayed(), true);
+    //assert.equal(await closeverify.isDisplayed(), true);
     browser.saveScreenshot("./Screenshots/homepagewithusersignin.png");
   }
   async land_close_mobileverification() {
@@ -122,10 +123,10 @@ class SignIn {
   async land_basket() {
     const basket = await this.lanbasket;
     await basket.waitForDisplayed({ timeout: 15000 });
-    assert.equal(await basket.isDisplayed(), true);
+   // assert.equal(await basket.isDisplayed(), true);
     const baskettext = await (await this.lanbasket).getText();
     console.log(baskettext);
     browser.saveScreenshot("./Screenshots/basket.png");
   }
 }
-export default new SignIn();
+module.exports =new SignIn();
