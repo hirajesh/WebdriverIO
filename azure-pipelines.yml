@@ -17,5 +17,7 @@ steps:
 
 - script: |
     npm install
+    npm install chromedriver
+    npm install chromedriver --detect_chromedriver_version
     npx wdio wdio.conf.js
   displayName: 'npm install and build'
