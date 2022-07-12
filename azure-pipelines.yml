@@ -20,7 +20,8 @@ steps:
     npm install wdio-chromedriver-service --save-dev
     npx wdio wdio.conf.js
   displayName: 'npm install and build'
-- task: PublishTestResults@2
+- task: PublishPipelineArtifact@1
   inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'Test Report'
+    publishLocation: 'pipeline'
