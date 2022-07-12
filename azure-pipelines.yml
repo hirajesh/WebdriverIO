@@ -22,8 +22,5 @@ steps:
   displayName: 'npm install and build'
 - task: PublishTestResults@2
   inputs:
-    testResultsFormat: 'NUnit'
+    testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
-    mergeTestResults: true
-    failTaskOnFailedTests: true
-    testRunTitle: 'Test Report'
