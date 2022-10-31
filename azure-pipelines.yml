@@ -20,8 +20,10 @@ steps:
     npm install wdio-chromedriver-service --save-dev
     npx wdio wdio.conf.js
   displayName: 'npm install and build'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
-    testRunTitle: 'TestReport'
+    testResultsFiles: '**/*.xml'
+    searchFolder: '$(system.defaultworkingdirectory)/Testresults'
+    failTaskOnFailedTests: true
