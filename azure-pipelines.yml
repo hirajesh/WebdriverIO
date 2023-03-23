@@ -24,6 +24,6 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/*.xml'
+    testResultsFiles: '**/*.png'
     searchFolder: '$(system.defaultworkingdirectory)/Testresults'
     failTaskOnFailedTests: true
