@@ -25,5 +25,5 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/*.png'
-    searchFolder: '$(system.defaultworkingdirectory)/Testresults'
+    searchFolder: '$(system.defaultworkingdirectory)/Screenshots'
     failTaskOnFailedTests: true
