@@ -84,8 +84,10 @@ class SignIn {
 
   async landopenurl() {
     await browser.maximizeWindow();
-    await browser.url("https://lms.com:L@digital@uat1.homecentre.com/ae/en/");
+   // await browser.url("https://lms.com:L@digital@uat1.homecentre.com/ae/en/");
 //await browser.url("https://www.homecentre.com/ae/en/");
+    await browser.url("https://www.homecentre.com/ae/en/?X-Forwarded-For : 192.23.23.33");
+
 
     await browser.setTimeout({ pageLoad: 50000 });
     browser.saveScreenshot("./Screenshots/homepage.png");
